@@ -16,14 +16,19 @@ class ViewController: UIViewController {
     
     var gameIsActive = true
     
+    var gameTurn = 0
+    var winner = false
+    
     @IBAction func action(_ sender: Any) {
         if gameState[(sender as AnyObject).tag-1] == 0 && gameIsActive == true {
             gameState[(sender as AnyObject).tag-1] = activePlayer
-            
+            gameTurn += 1
             if activePlayer == 1 {
+//                gameTurn += 1
                 (sender as AnyObject).setImage(UIImage(named: "Cross.png"), for: UIControl.State())
                 activePlayer = 2
             } else {
+//                gameTurn += 1
                 (sender as AnyObject).setImage(UIImage(named: "Nought.png"), for: UIControl.State())
                 activePlayer = 1
             }
@@ -34,8 +39,11 @@ class ViewController: UIViewController {
                 gameIsActive = false
                 
                 if gameState[combination[0]] == 1 {
+                    winner = true
                     winningPlayer.text = "Player One Won!"
+                    
                 } else {
+                    winner = true
                     winningPlayer.text = "Player Two Won!"
                 }
                 
@@ -46,6 +54,7 @@ class ViewController: UIViewController {
         
         gameIsActive = false
         
+        
         for i in gameState {
             if i == 0 {
                 gameIsActive = true
@@ -53,7 +62,9 @@ class ViewController: UIViewController {
             }
         }
         
-        if gameIsActive == false {
+        while (gameTurn == 9) && (winner == false) {
+            gameTurn = 255
+            
             winningPlayer.text = "Draw!"
             winningPlayer.isHidden = false
             playAgainButton.isHidden = false
@@ -70,13 +81,15 @@ class ViewController: UIViewController {
         
         playAgainButton.isHidden = true
         winningPlayer.isHidden = true
-        // Do any additional setup after loading the view.
+
     }
 
     @IBAction func playAgain(_ sender: Any) {
         gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         gameIsActive = true
         activePlayer = 1
+        gameTurn = 0
+        winner = false
         
         playAgainButton.isHidden = true
         winningPlayer.isHidden = true
