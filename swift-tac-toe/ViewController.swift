@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     var player1Name : String? = "Player one"
     var player2Name : String? = "Player two"
     
+    var counter = 1
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,14 @@ class ViewController: UIViewController {
         playAgainButton.isHidden = true
         winningPlayer.isHidden = true
         
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounter() {
+        if(counter > 0) {
+            enterPlayerNames()
+            counter -= 1
+        }
     }
     
     func enterPlayerNames() {
@@ -49,6 +60,7 @@ class ViewController: UIViewController {
             player2Name = player2NameInput
 
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         alert.addAction(saveAction)
@@ -64,18 +76,12 @@ class ViewController: UIViewController {
         }
         
         present(alert, animated: true)
-        gameIsStopped = false
     }
     
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var winningPlayer: UILabel!
     
     @IBAction func action(_ sender: Any) {
-        
-        if gameIsStopped == true {
-            enterPlayerNames()
-        }
-        
         
         if gameState[(sender as AnyObject).tag-1] == 0 && gameIsActive == true {
             gameState[(sender as AnyObject).tag-1] = activePlayer
