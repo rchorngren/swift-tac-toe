@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var gameIsStopped = true
+    
     var activePlayer = 1
     var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
@@ -19,27 +21,87 @@ class ViewController: UIViewController {
     var gameTurn = 0
     var winner = false
     
+    var player1Name : String? = "Player one"
+    var player2Name : String? = "Player two"
+    
+    var counter = 1
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         playAgainButton.isHidden = true
         winningPlayer.isHidden = true
-
+        currentPlayerLabel.isHidden = true
+        currentPlayerName.isHidden = true
+        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounter() {
+        if(counter > 0) {
+            enterPlayerNames()
+            counter -= 1
+        }
+    }
+    
+    func enterPlayerNames() {
+        let alert = UIAlertController(title: "New game", message: "Enter the names of who is playing", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Play!", style: .default) { [self] action in
+            guard let player1nameField = alert.textFields?.first else { return }
+            guard let player1NameInput = player1nameField.text else { return }
+            if player1NameInput == "" { return }
+            
+            guard let player2NameField = alert.textFields?[1] else { return }
+            guard let player2NameInput = player2NameField.text else { return }
+            if player2NameInput == "" { return }
+            
+            player1Name = player1NameInput
+            player2Name = player2NameInput
+            
+            currentPlayerName.text = player1Name
+            
+            currentPlayerLabel.isHidden = false
+            currentPlayerName.isHidden = false
+        }
+        
+        //let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(saveAction)
+        //alert.addAction(cancelAction)
+        
+        alert.addTextField{ textField in
+            textField.placeholder = "Player one"
+            textField.autocapitalizationType = .words
+        }
+        alert.addTextField{ textField in
+            textField.placeholder = "Player two"
+            textField.autocapitalizationType = .words
+        }
+        
+        present(alert, animated: true)
     }
     
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var winningPlayer: UILabel!
+    @IBOutlet weak var currentPlayerName: UILabel!
+    @IBOutlet weak var currentPlayerLabel: UILabel!
     
     @IBAction func action(_ sender: Any) {
+        
         if gameState[(sender as AnyObject).tag-1] == 0 && gameIsActive == true {
             gameState[(sender as AnyObject).tag-1] = activePlayer
             gameTurn += 1
             if activePlayer == 1 {
                 (sender as AnyObject).setImage(UIImage(named: "Cross.png"), for: UIControl.State())
+                currentPlayerName.text = player2Name
                 activePlayer = 2
                 
             } else {
                 (sender as AnyObject).setImage(UIImage(named: "Nought.png"), for: UIControl.State())
+                currentPlayerName.text = player1Name
                 activePlayer = 1
             }
         }
@@ -50,11 +112,15 @@ class ViewController: UIViewController {
                 
                 if gameState[combination[0]] == 1 {
                     winner = true
-                    winningPlayer.text = "Player One Won!"
+                    winningPlayer.text = "\(player1Name!) Won!"
+                    currentPlayerLabel.text = "Winner:"
+                    currentPlayerName.text = player1Name
                     
                 } else {
                     winner = true
-                    winningPlayer.text = "Player Two Won!"
+                    winningPlayer.text = "\(player2Name!) Won!"
+                    currentPlayerLabel.text = "Winner:"
+                    currentPlayerName.text = player2Name
                 }
                 
                 playAgainButton.isHidden = false
@@ -74,6 +140,10 @@ class ViewController: UIViewController {
             //setting gameTurn to 255 to break while-loop
             gameTurn = 255
             winningPlayer.text = "Draw!"
+            
+            currentPlayerLabel.text = "Winner:"
+            currentPlayerName.text = "None!"
+            
             winningPlayer.isHidden = false
             playAgainButton.isHidden = false
         }
@@ -85,6 +155,9 @@ class ViewController: UIViewController {
         activePlayer = 1
         gameTurn = 0
         winner = false
+        
+        currentPlayerLabel.text = "Current player:"
+        currentPlayerName.text = player1Name
         
         playAgainButton.isHidden = true
         winningPlayer.isHidden = true
