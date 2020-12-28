@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var player1Name : String? = "Player one"
     var player2Name : String? = "Player two"
     
-    var counter = 1
+    var counter = 0
     
     
     
@@ -33,14 +33,12 @@ class ViewController: UIViewController {
         
         playAgainButton.isHidden = true
         winningPlayer.isHidden = true
-        currentPlayerLabel.isHidden = true
-        currentPlayerName.isHidden = true
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     
     @objc func updateCounter() {
-        if(counter > 0) {
+        if(counter == 0) {
             enterPlayerNames()
             counter -= 1
         }
@@ -63,14 +61,8 @@ class ViewController: UIViewController {
             
             currentPlayerName.text = player1Name
             
-            currentPlayerLabel.isHidden = false
-            currentPlayerName.isHidden = false
         }
-        
-        //let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
         alert.addAction(saveAction)
-        //alert.addAction(cancelAction)
         
         alert.addTextField{ textField in
             textField.placeholder = "Player one"
@@ -80,6 +72,8 @@ class ViewController: UIViewController {
             textField.placeholder = "Player two"
             textField.autocapitalizationType = .words
         }
+        
+        currentPlayerName.text = player1Name
         
         present(alert, animated: true)
     }
