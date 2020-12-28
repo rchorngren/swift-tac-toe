@@ -111,6 +111,20 @@
                                     <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rz-Sw-Cwi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVd-fF-KXE">
+                                <rect key="frame" x="221" y="778" width="173" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current player:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdx-Ep-tUR">
+                                <rect key="frame" x="20" y="778" width="173" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Mq-v0-UoG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -119,6 +133,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentPlayerLabel" destination="Tdx-Ep-tUR" id="e2f-jo-51f"/>
+                        <outlet property="currentPlayerName" destination="PVd-fF-KXE" id="syI-uH-HGL"/>
                         <outlet property="playAgainButton" destination="WDQ-B9-hlg" id="R7D-vX-AdT"/>
                         <outlet property="winningPlayer" destination="zaH-BX-cTj" id="0Fk-P0-CIG"/>
                     </connections>
