@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="8sm-CU-OIs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="8sm-CU-OIs">
                                 <rect key="frame" x="22" y="317" width="370" height="370"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="370" id="IGn-2D-rpo"/>
@@ -116,8 +116,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Mq-v0-UoG" firstAttribute="bottom" secondItem="8sm-CU-OIs" secondAttribute="bottom" constant="175" id="SDr-GT-ICg"/>
-                            <constraint firstItem="8sm-CU-OIs" firstAttribute="leading" secondItem="7Mq-v0-UoG" secondAttribute="leading" constant="22" id="s4e-eI-dCO"/>
-                            <constraint firstItem="7Mq-v0-UoG" firstAttribute="trailing" secondItem="8sm-CU-OIs" secondAttribute="trailing" constant="22" id="vrS-dp-WgC"/>
                         </constraints>
                     </view>
                     <connections>
