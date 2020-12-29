@@ -83,6 +83,20 @@ class ViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    func disableInput() {
+        for i in 1...9{
+            let button = view.viewWithTag(i) as! UIButton
+            button.isEnabled = false
+        }
+    }
+    
+    func enableInput() {
+        for i in 1...9{
+            let button = view.viewWithTag(i) as! UIButton
+            button.isEnabled = true
+        }
+    }
+    
     @IBOutlet weak var playAgainButton: UIButton!
     @IBOutlet weak var winningPlayer: UILabel!
     @IBOutlet weak var currentPlayerName: UILabel!
@@ -94,7 +108,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var player2ScoreValue: UILabel!
     
     @IBAction func action(_ sender: Any) {
-        
         if gameState[(sender as AnyObject).tag-1] == 0 && gameIsActive == true {
             gameState[(sender as AnyObject).tag-1] = activePlayer
             gameTurn += 1
@@ -123,6 +136,7 @@ class ViewController: UIViewController {
                     player1Score+=1
                     player1ScoreValue.text = String(player1Score)
                     
+                    disableInput()
                 } else {
                     winner = true
                     winningPlayer.text = "\(player2Name!) Won!"
@@ -131,6 +145,8 @@ class ViewController: UIViewController {
                     
                     player2Score+=1
                     player2ScoreValue.text = String(player2Score)
+                    
+                    disableInput()
                 }
                 
                 playAgainButton.isHidden = false
@@ -156,6 +172,8 @@ class ViewController: UIViewController {
             
             winningPlayer.isHidden = false
             playAgainButton.isHidden = false
+            
+            disableInput()
         }
     }
 
@@ -176,6 +194,7 @@ class ViewController: UIViewController {
             let button = view.viewWithTag(i) as! UIButton
             button.setImage(nil, for: UIControl.State())
         }
+        enableInput()
     }
     
     
