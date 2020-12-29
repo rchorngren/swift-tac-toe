@@ -21,10 +21,13 @@ class ViewController: UIViewController {
     var gameTurn = 0
     var winner = false
     
-    var player1Name : String? = "Player one"
-    var player2Name : String? = "Player two"
+    var player1Name : String? = "Player One"
+    var player2Name : String? = "Player Two"
     
     var counter = 0
+    
+    var player1Score = 0
+    var player2Score = 0
     
     
     
@@ -60,6 +63,8 @@ class ViewController: UIViewController {
             player2Name = player2NameInput
             
             currentPlayerName.text = player1Name
+            player1ScoreName.text = player1Name
+            player2ScoreName.text = player2Name
             
         }
         alert.addAction(saveAction)
@@ -82,6 +87,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var winningPlayer: UILabel!
     @IBOutlet weak var currentPlayerName: UILabel!
     @IBOutlet weak var currentPlayerLabel: UILabel!
+    
+    @IBOutlet weak var player1ScoreName: UILabel!
+    @IBOutlet weak var player2ScoreName: UILabel!
+    @IBOutlet weak var player1ScoreValue: UILabel!
+    @IBOutlet weak var player2ScoreValue: UILabel!
     
     @IBAction func action(_ sender: Any) {
         
@@ -110,11 +120,17 @@ class ViewController: UIViewController {
                     currentPlayerLabel.text = "Winner:"
                     currentPlayerName.text = player1Name
                     
+                    player1Score+=1
+                    player1ScoreValue.text = String(player1Score)
+                    
                 } else {
                     winner = true
                     winningPlayer.text = "\(player2Name!) Won!"
                     currentPlayerLabel.text = "Winner:"
                     currentPlayerName.text = player2Name
+                    
+                    player2Score+=1
+                    player2ScoreValue.text = String(player2Score)
                 }
                 
                 playAgainButton.isHidden = false
