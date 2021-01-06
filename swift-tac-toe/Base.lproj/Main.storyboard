@@ -244,39 +244,48 @@
             </objects>
             <point key="canvasLocation" x="-971.01449275362324" y="476.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Large Board-->
         <scene sceneID="X0e-xi-EMm">
             <objects>
-                <viewController id="gMF-af-EFm" sceneMemberID="viewController">
+                <viewController id="gMF-af-EFm" customClass="LargeBoard" customModule="swift_tac_toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nRm-P4-zCK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztl-dz-Jsf">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztl-dz-Jsf">
                                 <rect key="frame" x="57" y="185" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GJa-ez-bjS"/>
                                     <constraint firstAttribute="width" constant="40" id="OPR-AM-0wQ"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="W8L-2D-Wuu"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhJ-Ts-qNS">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhJ-Ts-qNS">
                                 <rect key="frame" x="122" y="184" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gok-oN-kjz"/>
                                     <constraint firstAttribute="width" constant="40" id="yo6-fR-ZfI"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="baa-hW-pu6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYU-Tw-kdl">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYU-Tw-kdl">
                                 <rect key="frame" x="187" y="184" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="9ft-pd-vG7"/>
                                     <constraint firstAttribute="height" constant="40" id="ig4-vc-sO4"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="O1B-9k-W1K"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLe-Fz-Qnm">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLe-Fz-Qnm">
                                 <rect key="frame" x="122" y="249" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="9yV-mV-YjU"/>
@@ -284,9 +293,12 @@
                                     <constraint firstAttribute="width" constant="40" id="SuA-K1-Xcx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fdz-uT-PTN"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="gGq-zD-4jQ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-Tu-aIX">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-Tu-aIX">
                                 <rect key="frame" x="57" y="250" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="86Z-HP-jcq"/>
@@ -296,9 +308,12 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="fFk-RM-7eh"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="sDg-Rm-bxg"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="pEb-SZ-lEl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-Jh-qq3">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-Jh-qq3">
                                 <rect key="frame" x="252" y="250" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="CXM-Wm-vb2"/>
@@ -306,9 +321,12 @@
                                     <constraint firstAttribute="height" constant="40" id="JgX-nw-qW7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="R2Y-l3-PXg"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="NU1-MK-lbP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2x-xK-Phc">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2x-xK-Phc">
                                 <rect key="frame" x="317" y="249" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="374-fh-96O"/>
@@ -316,23 +334,32 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="SYh-31-KED"/>
                                     <constraint firstAttribute="width" constant="40" id="iV7-Lc-G0B"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="F9G-4s-QHW"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-Qs-qwL">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-Qs-qwL">
                                 <rect key="frame" x="252" y="185" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VpI-Yh-W3L"/>
                                     <constraint firstAttribute="width" constant="40" id="sDz-K0-DYe"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="vem-gC-fP9"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNO-Xo-NG9">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNO-Xo-NG9">
                                 <rect key="frame" x="317" y="184" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BED-GP-7w5"/>
                                     <constraint firstAttribute="width" constant="40" id="gte-Bs-xEB"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="kvj-ci-oQp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-9W-zEv">
                                 <rect key="frame" x="171.5" y="25" width="71" height="36"/>
@@ -345,10 +372,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play again!"/>
                                 <connections>
+                                    <action selector="playAgain:" destination="gMF-af-EFm" eventType="touchUpInside" id="Bo4-i7-kx5"/>
                                     <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEv-rd-M0y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DT-l4-P8R">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DT-l4-P8R">
                                 <rect key="frame" x="187" y="249" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Dlt-vD-mOh"/>
@@ -356,9 +384,12 @@
                                     <constraint firstAttribute="height" constant="40" id="diK-U7-JD0"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="yrP-Rb-A3g"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="Rpu-nu-4Hm"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FC0-lw-VJX">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FC0-lw-VJX">
                                 <rect key="frame" x="57" y="315" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="YhX-Dt-alk"/>
@@ -368,9 +399,12 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="p9m-Kw-BG3"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="yZE-88-uxr"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="NMm-vG-Fuq"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6n-vA-856">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6n-vA-856">
                                 <rect key="frame" x="122" y="314" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="MZu-q7-TmM"/>
@@ -380,9 +414,12 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="wTi-Bi-cGL"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="zXf-zj-n8P"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="WDA-34-La9"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-4Y-Zff">
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-4Y-Zff">
                                 <rect key="frame" x="187" y="314" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2Aw-Gg-tbm"/>
@@ -392,9 +429,12 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="eXd-m2-WL4"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="jbi-aT-fvD"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="nik-Wt-jDk"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-S6-ldm">
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-S6-ldm">
                                 <rect key="frame" x="252" y="315" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="HQp-JL-fUa"/>
@@ -404,9 +444,12 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="dla-3u-1fx"/>
                                     <constraint firstAttribute="height" constant="40" id="eWB-wT-R3C"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="h3n-Po-Dx6"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-7Y-ZZc">
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-7Y-ZZc">
                                 <rect key="frame" x="317" y="314" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="EPW-1X-apy"/>
@@ -416,9 +459,12 @@
                                     <constraint firstAttribute="height" constant="40" id="Twp-04-IqE"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="wbt-cQ-RkD"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="zmT-sh-nrh"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDn-X3-MLy">
+                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDn-X3-MLy">
                                 <rect key="frame" x="57" y="380" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="4dL-rI-r9O"/>
@@ -430,9 +476,12 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="xjk-n8-qJg"/>
                                     <constraint firstAttribute="width" constant="40" id="znR-K9-ogb"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="JHm-hy-jra"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hik-Ek-1uC">
+                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hik-Ek-1uC">
                                 <rect key="frame" x="122" y="379" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ACp-Qu-mSv"/>
@@ -444,9 +493,12 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="wGn-cP-c0G"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="wuO-Lq-7Gc"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="6AP-sr-qCL"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5E-fR-p3V">
+                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5E-fR-p3V">
                                 <rect key="frame" x="187" y="379" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="4Fn-Hd-wJX"/>
@@ -458,9 +510,12 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="hwb-Q9-rk7"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="yUV-F3-ULB"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="LVw-IE-6TA"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29d-hn-4pO">
+                            <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29d-hn-4pO">
                                 <rect key="frame" x="252" y="380" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ajx-s7-HCV"/>
@@ -472,9 +527,12 @@
                                     <constraint firstAttribute="width" constant="40" id="eG7-s1-5wx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="sol-7o-uHf"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="CCB-ct-pzA"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrB-Tm-bF0">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrB-Tm-bF0">
                                 <rect key="frame" x="317" y="379" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="8M9-ef-6vr"/>
@@ -486,9 +544,12 @@
                                     <constraint firstAttribute="width" constant="40" id="rjd-xD-LpC"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="xKo-CZ-R8X"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="yii-7A-a2m"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asT-Ey-BVy">
+                            <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asT-Ey-BVy">
                                 <rect key="frame" x="57" y="445" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="26t-eU-Xb4"/>
@@ -502,9 +563,12 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="t9T-f5-jmJ"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="tEU-Ei-u07"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="kSG-7l-PRF"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-q1-jwg">
+                            <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-q1-jwg">
                                 <rect key="frame" x="122" y="444" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="5Ib-J5-Gwq"/>
@@ -518,9 +582,12 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="p5i-pF-qLn"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="zgf-OG-5KS"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="Slh-CB-Ypo"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-AE-rci">
+                            <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-AE-rci">
                                 <rect key="frame" x="187" y="444" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="6Id-T2-bZc"/>
@@ -534,9 +601,12 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="qqt-1c-P6z"/>
                                     <constraint firstAttribute="width" constant="40" id="xoP-hN-QFZ"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="qxN-mJ-Row"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMD-u8-Jsu">
+                            <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMD-u8-Jsu">
                                 <rect key="frame" x="252" y="445" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="27q-cP-y1t"/>
@@ -550,9 +620,12 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="mcy-4G-3kg"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="tcR-zI-6iO"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="UGw-yy-wcy"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7S-Y5-xwN">
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7S-Y5-xwN">
                                 <rect key="frame" x="317" y="444" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="036-Vm-h6A"/>
@@ -566,7 +639,10 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="mCm-O5-LQs"/>
                                     <constraint firstAttribute="width" constant="40" id="qhe-es-lr5"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="action:" destination="gMF-af-EFm" eventType="touchUpInside" id="wdm-Qu-m9x"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-1X-4dV">
                                 <rect key="frame" x="0.0" y="585" width="414" height="1"/>
@@ -808,6 +884,16 @@
                             <constraint firstItem="hik-Ek-1uC" firstAttribute="top" secondItem="O6n-vA-856" secondAttribute="bottom" constant="25" id="ysN-nF-ybZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentPlayerLabel" destination="caj-nZ-gCp" id="sdO-Pi-roi"/>
+                        <outlet property="currentPlayerName" destination="urf-62-ezM" id="wQO-R4-2YG"/>
+                        <outlet property="playAgainButton" destination="wsY-E3-2Q8" id="jnu-eO-mZ1"/>
+                        <outlet property="player1ScoreName" destination="euX-WH-JKE" id="CLs-FX-Tbe"/>
+                        <outlet property="player1ScoreValue" destination="nMq-ZJ-w2Y" id="ssA-mQ-bLn"/>
+                        <outlet property="player2ScoreName" destination="AQH-MN-0ko" id="CTI-5p-JI5"/>
+                        <outlet property="player2ScoreValue" destination="PCm-LW-S4m" id="t3f-YB-LdZ"/>
+                        <outlet property="winningPlayer" destination="oEh-9W-zEv" id="ifh-1h-kKb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noc-ic-Wov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -816,7 +902,6 @@
     </scenes>
     <resources>
         <image name="Board" width="1078" height="1068"/>
-        <image name="Cross" width="300" height="297"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
