@@ -15,6 +15,7 @@
 		ED8664412588E3F400E70F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED86643F2588E3F400E70F6F /* LaunchScreen.storyboard */; };
 		ED86644C2588E3F400E70F6F /* swift_tac_toeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86644B2588E3F400E70F6F /* swift_tac_toeTests.swift */; };
 		ED8664572588E3F400E70F6F /* swift_tac_toeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8664562588E3F400E70F6F /* swift_tac_toeUITests.swift */; };
+		EDA8277325A6029B00291B60 /* LargeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA8277225A6029A00291B60 /* LargeBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		ED8664522588E3F400E70F6F /* swift-tac-toeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-tac-toeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8664562588E3F400E70F6F /* swift_tac_toeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_tac_toeUITests.swift; sourceTree = "<group>"; };
 		ED8664582588E3F400E70F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA8277225A6029A00291B60 /* LargeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				ED8664342588E3F200E70F6F /* AppDelegate.swift */,
 				ED8664362588E3F200E70F6F /* SceneDelegate.swift */,
 				ED8664382588E3F200E70F6F /* ViewController.swift */,
+				EDA8277225A6029A00291B60 /* LargeBoard.swift */,
 				ED86643A2588E3F200E70F6F /* Main.storyboard */,
 				ED86643D2588E3F400E70F6F /* Assets.xcassets */,
 				ED86643F2588E3F400E70F6F /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			files = (
 				ED8664392588E3F200E70F6F /* ViewController.swift in Sources */,
 				ED8664352588E3F200E70F6F /* AppDelegate.swift in Sources */,
+				EDA8277325A6029B00291B60 /* LargeBoard.swift in Sources */,
 				ED8664372588E3F200E70F6F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
