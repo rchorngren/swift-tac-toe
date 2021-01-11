@@ -16,7 +16,7 @@ class LargeBoard: UIViewController {
     var activePlayer = 1
     var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
-    var winningCombinationSmall =
+    var winningCombinationLarge =
         [[0, 1, 2, 3], [1, 2, 3, 4],
          [5, 6, 7, 8], [6, 7, 8, 9],
          [10, 11, 12, 13], [11, 12, 13, 14],
@@ -130,7 +130,7 @@ class LargeBoard: UIViewController {
         if gameState[(sender as AnyObject).tag-1] == 0 && gameIsActive == true {
             gameState[(sender as AnyObject).tag-1] = activePlayer
             gameTurn += 1
-            print("gameTurn: \(gameTurn)")
+            
             if activePlayer == 1 {
                 (sender as AnyObject).setImage(UIImage(named: "Cross.png"), for: UIControl.State())
                 currentPlayerName.text = player2Name
@@ -143,7 +143,7 @@ class LargeBoard: UIViewController {
             }
         }
         
-        for combination in winningCombinationSmall {
+        for combination in winningCombinationLarge {
             if gameState[combination[0]] != 0 && gameState[combination[0]] == gameState[combination[1]] && gameState[combination[1]] == gameState[combination[2]] && gameState[combination[2]] == gameState[combination[3]] {
                 gameIsActive = false
                 
